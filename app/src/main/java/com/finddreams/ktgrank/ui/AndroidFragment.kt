@@ -21,6 +21,7 @@ import kotlin.math.log
 class AndroidFragment : BaseFragment<FragmentAndroidBinding>() {
     private lateinit var mAdapter: BindRecyclerAdapter
     private var gank = ArrayList<GankResponse>()
+    var num:Int=1
 
     override fun getBindLayoutId(): Int {
         return R.layout.fragment_android
@@ -32,11 +33,10 @@ class AndroidFragment : BaseFragment<FragmentAndroidBinding>() {
         mBinding.recycleView.adapter=mAdapter
         getAndroidData(1)
         mBinding.refreshLayout.setOnRefreshListener {
-            toast("刷新")
+            getAndroidData(1)
         }
         mBinding.refreshLayout.setOnLoadmoreListener{
-            toast("加载更多")
-            getAndroidData(2)
+            getAndroidData(num++)
         }
         mAdapter.setOnItemClickListener {
             pos->
@@ -52,9 +52,13 @@ class AndroidFragment : BaseFragment<FragmentAndroidBinding>() {
         App.instance.appComponent.getApi().getAndroid(page).subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread()).subscribe(
                 { response ->
+                    if (page==1){
+                        gank.clear()
+                    }
                     gank.addAll(response.results)
                     mAdapter.notifyDataSetChanged()
                     mBinding.refreshLayout.finishLoadmore()
+                    mBinding.refreshLayout.finishRefresh()
                 })
     }
 

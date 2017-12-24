@@ -1,19 +1,13 @@
 package com.finddreams.ktgrank.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentActivity
 import android.support.v4.app.FragmentTransaction
-import android.widget.RadioGroup
 import com.finddreams.ktgrank.R
-import com.finddreams.ktgrank.base.App
-import com.finddreams.ktgrank.utils.toast
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : FragmentActivity() {
     private var curFragment: Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,18 +26,14 @@ class MainActivity : AppCompatActivity() {
             var mHomeFragment = supportFragmentManager.findFragmentByTag("home")
             if (mHomeFragment == null) {
                 mHomeFragment = AndroidFragment()
-                if (mHomeFragment != null) {
                     ft.add(R.id.ll_main, mHomeFragment, "home")
-                }
             }
             curFragment = mHomeFragment
         } else if (checkedId == R.id.rb_user) {
             var meizifragment = supportFragmentManager.findFragmentByTag("user")
             if (meizifragment == null) {
                 meizifragment = MeiziFragment()
-                if (meizifragment != null) {
                     ft.add(R.id.ll_main, meizifragment, "user")
-                }
             }
             curFragment = meizifragment
         }

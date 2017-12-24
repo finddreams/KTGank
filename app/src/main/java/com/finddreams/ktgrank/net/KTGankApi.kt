@@ -10,9 +10,6 @@ import java.util.ArrayList
 /**
  * Created by liuxiang on 2017/12/23.
  */
-/**
- * Created by wing on 11/23/16.
- */
 interface KTGankApi {
 
     /**
@@ -24,7 +21,7 @@ interface KTGankApi {
     /**
      * 福利所有数据
      */
-    @GET("data/福利/10/{page}")
+    @GET("data/福利/15/{page}")
     fun getGirlData(@Path("page") page:Int):Observable<JsonResult<ArrayList<GankResponse>>>
 
     /**

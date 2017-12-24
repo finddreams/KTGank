@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="gank"
             type="com.finddreams.ktgrank.bean.GankResponse" />
     </data>
 
     <RelativeLayout
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
         android:layout_marginTop="10dp"
         android:background="#fff"
         android:orientation="vertical"
-        android:paddingTop="10dp">
+      >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:layout_marginTop="10dp"
             android:orientation="vertical"
-            android:paddingLeft="16dp"
             android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
             android:paddingRight="16dp">
 
             <TextView
@@ -36,11 +38,10 @@
                 android:textSize="16sp" />
 
             <ImageView
-
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="10dp"
-                android:scaleType="center"
+                android:scaleType="fitXY"
                 android:visibility="@{gank.hasImg()?View.VISIBLE:View.GONE}"
                 app:load_image="@{gank.images[0]}" />
 
@@ -48,20 +49,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:text="@{gank.who}"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    />
 
                 <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text = "@{gank.create()}"
+                    android:layout_weight="1"
+                    android:text="@{gank.who}" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    />
+                    android:layout_marginTop="10dp"
+                    android:text="@{gank.create()}" />
 
             </LinearLayout>
         </LinearLayout>

@@ -1,15 +1,10 @@
 package com.finddreams.ktgrank.ui
 
-import android.app.Activity
-import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
-import android.os.Build
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
+import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.ImageView
 import com.finddreams.ktgrank.R
 import com.finddreams.ktgrank.databinding.ActivityWebBinding
 
@@ -19,6 +14,11 @@ class WebActivity : BaseBindingActivity<ActivityWebBinding>() {
     }
 
     override fun initData() {
+        val settings = mBinding.webView.settings
+        settings.setAppCacheEnabled(true)
+        settings.cacheMode=WebSettings.LOAD_DEFAULT
+        settings.setSupportZoom(false)
+        settings.displayZoomControls=false
         mBinding.webView.loadUrl(intent.getStringExtra(URL))
         mBinding.webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
@@ -32,7 +32,7 @@ class WebActivity : BaseBindingActivity<ActivityWebBinding>() {
     companion object {
         val URL = "url"
         fun startActivity(context: Context, url: String) {
-            val intent = Intent(context, WebActivity.javaClass)
+            val intent = Intent(context, WebActivity::class.java)
             intent.putExtra(URL, url)
             context.startActivity(intent)
         }

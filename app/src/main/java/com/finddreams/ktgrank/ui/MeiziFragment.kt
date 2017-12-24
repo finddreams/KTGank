@@ -24,6 +24,7 @@ import kotlin.math.log
 class MeiziFragment : BaseFragment<FragmentAndroidBinding>() {
     private lateinit var mAdapter: GirlAdapter
     private var gank = ArrayList<GankResponse>()
+    var num:Int=1
 
     override fun getBindLayoutId(): Int {
         return R.layout.fragment_android
@@ -36,11 +37,10 @@ class MeiziFragment : BaseFragment<FragmentAndroidBinding>() {
         mBinding.recycleView.layoutManager=GridLayoutManager(context,2)
         getAndroidData(1)
         mBinding.refreshLayout.setOnRefreshListener {
-            toast("刷新")
+            getAndroidData(1)
         }
         mBinding.refreshLayout.setOnLoadmoreListener{
-            toast("加载更多")
-            getAndroidData(2)
+            getAndroidData(num++)
         }
         mAdapter.setOnItemClickListener {
             pos->
@@ -56,9 +56,13 @@ class MeiziFragment : BaseFragment<FragmentAndroidBinding>() {
         App.instance.appComponent.getApi().getMeizi(page).subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread()).subscribe(
                 { response ->
+                    if (page==1){
+                        gank.clear()
+                    }
                     gank.addAll(response.results)
                     mAdapter.notifyDataSetChanged()
                     mBinding.refreshLayout.finishLoadmore()
+                    mBinding.refreshLayout.finishRefresh()
                 })
     }
 
