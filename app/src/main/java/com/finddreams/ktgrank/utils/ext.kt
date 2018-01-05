@@ -18,3 +18,20 @@ fun Fragment.toast(msg: String, length: Int = Toast.LENGTH_SHORT) {
         Toast.LENGTH_LONG -> Toast.makeText(context, msg, length).show()
     }
 }
+/**
+ * screen width in pixels
+ */
+val Context.screenWidth
+    get() = resources.displayMetrics.widthPixels
+
+/**
+ * screen height in pixels
+ */
+val Context.screenHeight
+    get() = resources.displayMetrics.heightPixels
+
+/**
+ * returns dip(dp) dimension value in pixels
+ * @param value dp
+ */
+fun Context.dip2px(value: Int): Int = (value * resources.displayMetrics.density).toInt()
