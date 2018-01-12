@@ -4,17 +4,25 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.support.v4.app.FragmentTransaction
+import android.view.Window
 import com.finddreams.ktgrank.R
+import com.finddreams.ktgrank.utils.setTransparent
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * Created by liuxiang on 2017/12/23.
+ * 主页
+ */
 class MainActivity : FragmentActivity() {
     private var curFragment: Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE) // 无标题栏
+        setTransparent()
         setContentView(R.layout.activity_main)
         // 底部tab切换监听
-        rg_tab.setOnCheckedChangeListener({ group, checkedId -> switchTab(checkedId) })
+        rg_tab.setOnCheckedChangeListener({ _, checkedId -> switchTab(checkedId) })
         switchTab(R.id.rb_home)
     }
 
@@ -44,8 +52,7 @@ class MainActivity : FragmentActivity() {
 
 
     fun hideAllFragment(ft: FragmentTransaction) {
-        var fragment: Fragment?
-        fragment = supportFragmentManager.findFragmentByTag("home")
+        var fragment: Fragment? = supportFragmentManager.findFragmentByTag("home")
         if (fragment != null) {
             ft.hide(fragment)
         }

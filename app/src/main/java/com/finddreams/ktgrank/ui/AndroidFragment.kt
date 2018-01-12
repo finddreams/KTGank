@@ -16,7 +16,8 @@ import kotlin.math.log
 
 
 /**
- *
+ * Created by liuxiang on 2017/12/23.
+ * Android 列表
  */
 class AndroidFragment : BaseFragment<FragmentAndroidBinding>() {
     private lateinit var mAdapter: BindRecyclerAdapter
@@ -42,9 +43,7 @@ class AndroidFragment : BaseFragment<FragmentAndroidBinding>() {
             pos->
         val gankResponse = gank[pos]
             val url = gankResponse.url
-            val intent=Intent(context,WebActivity::class.java)
-            intent.putExtra(WebActivity.URL,url)
-            startActivity(intent)
+            WebActivity.startActivity(context!!, url)
         }
     }
 

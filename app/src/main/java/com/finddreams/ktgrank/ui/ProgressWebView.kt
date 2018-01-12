@@ -23,7 +23,7 @@ class ProgressWebView(context: Context, attrs: AttributeSet) : WebView(context, 
         val drawable = context.resources.getDrawable(R.drawable.progress_bar)
         progressbar.progressDrawable = drawable
         addView(progressbar)
-        setWebChromeClient(WebChromeClient())
+        webChromeClient = WebChromeClient()
         settings.builtInZoomControls = true
     }
 
