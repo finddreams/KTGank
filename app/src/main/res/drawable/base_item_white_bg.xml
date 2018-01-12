@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 白底背景，包含触摸反馈 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/whiteclick" android:state_pressed="true"></item>
+    <item android:drawable="@color/whiteclick" android:state_focused="true"></item>
+    <item android:drawable="@color/whiteclick" android:state_selected="true"></item>
+    <item android:drawable="@color/white"></item>
+</selector>

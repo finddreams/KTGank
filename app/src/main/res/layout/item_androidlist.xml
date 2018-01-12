@@ -17,7 +17,7 @@
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
         android:layout_marginTop="10dp"
-        android:background="#fff"
+        android:background="@drawable/base_item_white_bg"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -35,9 +35,9 @@
                 android:layout_marginTop="10dp"
                 android:text="@{gank.desc,default=dfdfdf}"
                 app:autoSizeTextType="uniform"
-                app:autoSizeMinTextSize="12sp"
-                app:autoSizeMaxTextSize="16sp"
-                app:autoSizeStepGranularity="2sp"
+                app:autoSizeMinTextSize="14sp"
+                app:autoSizeMaxTextSize="18sp"
+                app:autoSizeStepGranularity="1sp"
                 android:textColor="#000"
                  />
 
