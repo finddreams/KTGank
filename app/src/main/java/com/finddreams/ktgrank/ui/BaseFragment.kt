@@ -11,7 +11,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 
 import com.finddreams.ktgrank.R
-
+/**
+ * Created by finddreams on 2017/12/23.
+ * baseFragment
+ */
 abstract class BaseFragment<B : ViewDataBinding> : Fragment() {
     protected lateinit var mBinding: B
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

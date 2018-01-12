@@ -5,7 +5,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 
 /**
- * Created by wing on 16-11-25.
+ * Created by finddreams on 2017/12/23.
+ * basebinding
  */
 abstract class BaseBindingAdapter<B : ViewDataBinding> : RecyclerView.Adapter<DataBoundViewHolder<B>>() {
     var mListener: ((pos: Int) -> Unit)? = null

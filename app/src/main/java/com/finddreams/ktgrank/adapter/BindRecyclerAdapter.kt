@@ -14,9 +14,8 @@ import com.wingsofts.gankclient.ui.adapter.BaseBindingAdapter
 import com.wingsofts.gankclient.ui.adapter.DataBoundViewHolder
 
 /**
- * Created by lx on 17-11-20.
+ * Created by finddreams on 2017/12/23.
  */
-
 class BindRecyclerAdapter(private val data: List<GankResponse>?) :BaseBindingAdapter<ItemAndroidlistBinding>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataBoundViewHolder<ItemAndroidlistBinding> {

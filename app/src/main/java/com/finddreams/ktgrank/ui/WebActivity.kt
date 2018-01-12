@@ -7,7 +7,10 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.finddreams.ktgrank.R
 import com.finddreams.ktgrank.databinding.ActivityWebBinding
-
+/**
+ * Created by finddreams on 2017/12/23.
+ * webview的
+ */
 class WebActivity : BaseBindingActivity<ActivityWebBinding>() {
     override fun getBindLayout(): Int {
         return R.layout.activity_web

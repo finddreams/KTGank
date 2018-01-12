@@ -41,7 +41,7 @@
             android:button="@null"
             android:gravity="center_horizontal"
             android:paddingTop="5dp"
-            android:drawableTop="@drawable/home_tab_user"
+            android:drawableTop="@drawable/home_tab_meizi"
             android:textSize="11dp" />
 
     </RadioGroup>

@@ -7,7 +7,7 @@ import com.finddreams.ktgrank.di.DaggerAppComponent
 import javax.inject.Inject
 
 /**
- * Created by liuxiang on 2017/12/23.
+ * Created by finddreams on 2017/12/23.
  */
 class App : Application() {
 

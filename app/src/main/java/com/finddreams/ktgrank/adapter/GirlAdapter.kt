@@ -10,7 +10,8 @@ import com.wingsofts.gankclient.ui.adapter.BaseBindingAdapter
 import com.wingsofts.gankclient.ui.adapter.DataBoundViewHolder
 
 /**
- * Created by wing on 16-11-25.
+ * Created by finddreams on 2017/12/23.
+ * 妹子
  */
 class GirlAdapter(private val mList: List<GankResponse>) : BaseBindingAdapter<ItemGirlBinding>() {
     override fun getItemCount(): Int {

@@ -1,7 +1,7 @@
 package com.finddreams.ktgrank.bean
 
 /**
- * Created by liuxiang on 2017/12/23.
+ * Created by finddreams on 2017/12/23.
  */
 data class GankResponse(
         val _id: String,

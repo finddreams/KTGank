@@ -8,7 +8,8 @@ import android.view.Window
 import com.finddreams.ktgrank.utils.setTransparent
 
 /**
- * Created by wing on 16-11-24.
+ * Created by finddreams on 2017/12/23.
+ * basebinding
  */
 abstract class BaseBindingActivity<B : ViewDataBinding> : FragmentActivity() {
 

@@ -8,14 +8,14 @@ import retrofit2.http.Path
 import java.util.ArrayList
 
 /**
- * Created by liuxiang on 2017/12/23.
+ * Created by finddreams on 2017/12/23.
  */
 interface KTGankApi {
 
     /**
      * Android所有数据
      */
-    @GET("data/Android/10/{page}")
+    @GET("data/Android/20/{page}")
     fun getAndroidData(@Path("page") page:Int): Observable<JsonResult<ArrayList<GankResponse>>>
 
     /**

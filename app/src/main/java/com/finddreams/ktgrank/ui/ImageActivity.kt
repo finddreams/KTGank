@@ -10,7 +10,10 @@ import com.finddreams.ktgrank.R
 import com.finddreams.ktgrank.databinding.ActivityImageBinding
 import com.finddreams.ktgrank.utils.screenHeight
 import com.finddreams.ktgrank.utils.toast
-
+/**
+ * Created by finddreams on 2017/12/23.
+ * 图片显示
+ */
 class ImageActivity : BaseBindingActivity<ActivityImageBinding>() {
     override fun initData() {
         mBinding.url = intent.getStringExtra(IMG)

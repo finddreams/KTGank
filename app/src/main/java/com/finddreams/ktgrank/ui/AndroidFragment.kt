@@ -16,8 +16,8 @@ import kotlin.math.log
 
 
 /**
- * Created by liuxiang on 2017/12/23.
- * Android 列表
+ * Created by finddreams on 2017/12/23.
+ * Android列表
  */
 class AndroidFragment : BaseFragment<FragmentAndroidBinding>() {
     private lateinit var mAdapter: BindRecyclerAdapter
@@ -37,7 +37,7 @@ class AndroidFragment : BaseFragment<FragmentAndroidBinding>() {
             getAndroidData(1)
         }
         mBinding.refreshLayout.setOnLoadmoreListener{
-            getAndroidData(num++)
+            getAndroidData(++num)
         }
         mAdapter.setOnItemClickListener {
             pos->

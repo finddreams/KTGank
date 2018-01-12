@@ -40,7 +40,7 @@ class MeiziFragment : BaseFragment<FragmentAndroidBinding>() {
             getAndroidData(1)
         }
         mBinding.refreshLayout.setOnLoadmoreListener{
-            getAndroidData(num++)
+            getAndroidData(++num)
         }
         mAdapter.setOnItemClickListener {
             pos->

@@ -2,14 +2,17 @@ package com.finddreams.ktgrank.utils
 
 import android.app.Activity
 import android.content.Context
+import android.databinding.BindingAdapter
 import android.os.Build
 import android.support.v4.app.Fragment
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.Toast
+import com.bumptech.glide.Glide
 
 /**
- * Created by liuxiang on 2017/12/23.
+ * Created by finddreams on 2017/12/23.
  * 拓展函数
  */
 fun Context.toast(msg: String, length: Int = Toast.LENGTH_SHORT) {
@@ -56,3 +59,14 @@ fun Activity.setTransparent(): Boolean {
     }
     return false
 }
+@BindingAdapter("load_image")
+fun loadImage(imageView: ImageView, url: String?) =
+        Glide.with(imageView.context).load(url)
+                .into(imageView)
+
+
+
+
+@BindingAdapter("load_asset")
+fun loadAsset(imageView: ImageView, id:Int) =
+        Glide.with(imageView.context).load(id).into(imageView)

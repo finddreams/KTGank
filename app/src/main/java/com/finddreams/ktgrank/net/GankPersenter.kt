@@ -9,7 +9,8 @@ import java.util.ArrayList
 import javax.inject.Inject
 
 /**
- * Created by liuxiang on 2017/12/23.
+ * Created by finddreams on 2017/12/23.
+ * 干货
  */
 class GankPersenter @Inject
 constructor(private val api: KTGankApi) {

@@ -18,7 +18,7 @@ class ProgressWebView(context: Context, attrs: AttributeSet) : WebView(context, 
 
     init {
         progressbar.layoutParams = AbsoluteLayout.LayoutParams(AbsoluteLayout.LayoutParams.FILL_PARENT,
-                10, 0, 0)
+                5, 0, 0)
 
         val drawable = context.resources.getDrawable(R.drawable.progress_bar)
         progressbar.progressDrawable = drawable

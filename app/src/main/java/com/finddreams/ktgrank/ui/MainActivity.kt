@@ -10,7 +10,7 @@ import com.finddreams.ktgrank.utils.setTransparent
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
- * Created by liuxiang on 2017/12/23.
+ * Created by finddreams on 2017/12/23.
  * 主页
  */
 class MainActivity : FragmentActivity() {
