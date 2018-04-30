@@ -18,7 +18,7 @@ class ImageActivity : BaseBindingActivity<ActivityImageBinding>() {
     override fun initData() {
         mBinding.url = intent.getStringExtra(IMG)
 
-        mBinding.root.setOnClickListener {
+        mBinding.photoView.setOnClickListener {
 
             supportFinishAfterTransition()
         }
